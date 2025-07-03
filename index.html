@@ -1,0 +1,10 @@
+<input id="topic" placeholder="Enter Trend">
+<button onclick="generate()">Create Post</button>
+<div id="result"></div>
+<script>
+  async function generate() {
+    cons topic = document.getElementById('topic').value;
+    const response = await fetch('https://colab.research.google.com/drive/1K9I01tFekT_O9wLVmFjzbepoNiXSD_XE?topic='+topic);
+    document.getElementById('result').innerText = await response.text();
+  }
+</script>
